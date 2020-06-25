@@ -15,7 +15,7 @@ a single command ``flake8``.
 .. _flake8: https://flake8.pycqa.org
 
 Pre-Commit Hooks
-------------------
+----------------
 
 In order to further ease the development process you can use pre-commit hooks.
 Pre-commit hooks can be configured in your repository with use of pre-commit_ 
