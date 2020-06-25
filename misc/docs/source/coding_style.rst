@@ -1,7 +1,7 @@
 .. _coding-style-guide:
 
-ObsPy Coding Style Guide
-========================
+Coding Style Guide
+==================
 
 Like most Python projects, we try to adhere to :pep:`8` (Style Guide for Python
 Code) and :pep:`257` (Docstring Conventions) with the modifications documented
