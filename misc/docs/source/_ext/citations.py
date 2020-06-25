@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+Directive for creating a citations.rst page using BibTeX files in the
+bibliography folder.
+"""
 
 import glob
 import os

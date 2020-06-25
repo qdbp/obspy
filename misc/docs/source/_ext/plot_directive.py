@@ -2,6 +2,9 @@
 A directive for including a Matplotlib plot in a Sphinx document
 ================================================================
 
+see https://matplotlib.org/3.2.2/_modules/matplotlib/sphinxext/plot_directive.html
+Modified in order to use :target: in plots
+
 By default, in HTML output, `plot` will include a .png file with a link to a
 high-res .png and .pdf.  In LaTeX output, it will include a .pdf.
 

@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+Directive for creating credits.rst page listing contributors, funds and quotes.
+"""
 
 import os
 
