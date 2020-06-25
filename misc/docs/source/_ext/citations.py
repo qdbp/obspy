@@ -24,9 +24,6 @@ TEMPLATE = """
 Citations
 ==========
 
-.. list-table::
-   :widths: 1 4
-
 """
 
 
@@ -71,7 +68,7 @@ def format_names(role):
 
 formats = {
     'article': words(sep='')[
-        '\n     - | ',
+        '\n       | ',
         words(sep=' ')[
             format_names('author'), brackets(field('year'))], ',',
         '\n       | ',
@@ -86,7 +83,7 @@ formats = {
         optional['\n       | ', field('url')]
     ],
     'book': words(sep='')[
-        '\n     - | ',
+        '\n       | ',
         words(sep=' ')[
             format_names('author'), brackets(field('year'))], ',',
         '\n       | ',
@@ -106,7 +103,7 @@ formats = {
         optional['\n       | ', field('url')]
     ],
     'incollection': words(sep='')[
-        '\n     - | ',
+        '\n       | ',
         words(sep=' ')[
             format_names('author'), brackets(field('year'))], ',',
         '\n       | ',
@@ -122,7 +119,7 @@ formats = {
         optional['\n       | ', field('url')]
     ],
     'techreport': words(sep='')[
-        '\n     - | ',
+        '\n       | ',
         words(sep=' ')[
             format_names('author'), brackets(field('year'))], ',',
         '\n       | ',
@@ -158,7 +155,7 @@ def create_citations_page(app):
         if entry.type not in formats:
             msg = "BibTeX entry type %s not implemented"
             raise NotImplementedError(msg % (entry.type))
-        out = '   * - .. [%s]%s'
+        out = '.. [%s] %s'
         line = str(formats[entry.type].format_data({'entry': entry}))
         # replace special content, e.g. <nbsp>
         for old, new in REPLACE_TOKEN:
@@ -173,33 +170,5 @@ def create_citations_page(app):
     fh.close()
 
 
-def post_process_html(app, pagename, templatename, context, doctree):
-    try:
-        context['body'] = \
-            context['body'].replace("&#8211;", '<span class="dash" />')
-    except Exception:
-        pass
-
-    if not doctree or not doctree.has_name('citations'):
-        return
-
-    # fix citations list
-    body = re.sub(
-        r'<td><table class="first last docutils citation" '
-        r'''frame="void" id="(?P<tag>[A-Za-z0-9]+)" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">(?P<content>\[[A-Za-z0-9]+\])</td><td></td></tr>
-</tbody>
-</table>
-</td>''',
-        r'<td id="\g<tag>">'
-        r'<span class="label label-default">\g<content></span>'
-        r'</td>',
-        context['body'])
-    context['body'] = body
-
-
 def setup(app):
     app.connect('builder-inited', create_citations_page)
-    app.connect('html-page-context', post_process_html)
