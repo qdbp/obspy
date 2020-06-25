@@ -7,14 +7,14 @@ ObsPy Documentation Contents
    :maxdepth: 3
 
    tutorial/index
+   gallery
    packages/index
    changelog
-   credits
-   coding_style
-   gallery
    citations
+   coding_style
    contributing
    code_of_conduct
+   credits
 
 Indices and tables
 ==================

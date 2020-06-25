@@ -285,7 +285,7 @@ Gallery
     event = read_events("/path/to/CMTSOLUTION")[0]
     event.plot(kind=[['global'], ['p_sphere', 'p_quiver']])
 
-.. image:: /_static/sds_report.png
+.. image:: /_images/sds_report.png
     :target: packages/autogen/obspy.scripts.sds_html_report.html
     :alt: SDS html report
     :scale: 50%

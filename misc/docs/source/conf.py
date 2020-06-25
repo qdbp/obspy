@@ -103,7 +103,7 @@ intersphinx_mapping = {
 #
 html_theme = "sphinx_rtd_theme"
 
-html_logo = '_static/images/obspy_logo_no_text.svg'
+html_logo = '_static/obspy_logo_no_text.svg'
 html_favicon = '_static/favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
