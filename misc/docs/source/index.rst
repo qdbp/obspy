@@ -13,6 +13,8 @@ ObsPy Documentation Contents
    coding_style
    gallery
    citations
+   contributing
+   code_of_conduct
 
 Indices and tables
 ==================

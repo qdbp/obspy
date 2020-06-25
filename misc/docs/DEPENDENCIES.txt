@@ -1,8 +1,9 @@
 sphinx>=3.1.1
-sphinx_rtd_theme
+m2r==dev  # due to https://github.com/miyakogi/m2r/issues/51
 pybtex>=0.22.2
-obspy
+sphinx_rtd_theme
 matplotlib
+obspy
 
 # tutorial
 basemap

@@ -54,18 +54,25 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.mathjax',
     'sphinx.ext.autosummary',
-    'sphinx.ext.graphviz',
-    'sphinx.ext.inheritance_diagram',
     'sphinx.ext.coverage',
     'sphinx.ext.duration',
     'sphinx.ext.todo',
     # theme
+    'm2r',
     'sphinx_rtd_theme',
     # custom extensions
     'plot_directive',
     'credits',
     'citations',
 ]
+
+# The file extensions of source files. Sphinx considers the files with this
+# suffix as sources. The value can be a dictionary mapping file extensions to
+# file types.
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
