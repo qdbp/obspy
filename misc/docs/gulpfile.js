@@ -18,20 +18,22 @@ const csso = require('gulp-csso');
 // define paths
 const PATHS = {
   scripts: {
-    src: './_static/js/**/*.js',
-    dest: './_static/js/',
+    src: './source/_static/js/**/*.js',
+    dest: './source/_static/js/',
+    dest2: './build/html/_static/js/',
   },
   styles: {
-    src: './_static/css/**/*.scss',
-    dest: './_static/css/',
+    src: './source/_static/css/**/*.scss',
+    dest: './source/_static/css/',
+    dest2: './build/html/_static/css/',
   },
   images: {
-    src: './_images/**/*',
-    dest: './_images/',
+    src: './source/_images/**/*',
+    dest: './source/_images/',
   },
   logos: {
-    src: './_static/*logo*',
-    dest: './_static/',
+    src: './source/_static/*logo*',
+    dest: './source/_static/',
   },
 };
 
@@ -70,7 +72,8 @@ function scripts_build() {
     .pipe(babel())
     .pipe(uglify())
     .pipe(rename({extname: '.min.js'}))
-    .pipe(gulp.dest(PATHS.scripts.dest, { sourcemaps: './maps' }));
+    .pipe(gulp.dest(PATHS.scripts.dest, { sourcemaps: './maps' }))
+    .pipe(gulp.dest(PATHS.scripts.dest2, { sourcemaps: './maps' }));
 }
 
 const js = gulp.series(scripts_clean, scripts_build);
@@ -105,7 +108,8 @@ function styles_build() {
     .pipe(csso())
     .pipe(clean_css())
     .pipe(rename({extname: '.min.css'}))
-    .pipe(gulp.dest(PATHS.styles.dest, { sourcemaps: './maps' }));
+    .pipe(gulp.dest(PATHS.styles.dest, { sourcemaps: './maps' }))
+    .pipe(gulp.dest(PATHS.styles.dest2, { sourcemaps: './maps' }));
 }
 
 const css = gulp.series(styles_check, styles_clean, styles_build);
