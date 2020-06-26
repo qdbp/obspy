@@ -8,6 +8,7 @@
 #
 
 import datetime
+import glob
 import obspy
 import os
 import sys
@@ -77,10 +78,13 @@ source_suffix = {
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
+# The master toctree document.
+master_doc = 'contents'
+
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', '_templates', '_ext']
 
 # Warn about all references where the target cannot be found.
 nitpicky = True
@@ -94,6 +98,10 @@ intersphinx_mapping = {
     'matplotlib': ('https://matplotlib.org/', None),
     'sqlalchemy': ('https://docs.sqlalchemy.org/en/latest/', None),
 }
+
+# A boolean that decides whether module names are prepended to all object names
+# (for object types where a “module” of some kind is defined).
+add_module_names = False
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -114,5 +122,37 @@ html_static_path = ['_static']
 # These paths are either relative to html_static_path 
 # or fully qualified paths (eg. https://...)
 html_css_files = [
-    'css/custom.css',
+    'css/custom.min.css',
 ]
+
+# Additional templates that should be rendered to pages, maps page names to
+# template names.
+html_additional_pages = {
+#    'index': 'index.html',
+    'build_status': 'build_status.html'
+}
+
+# generate automatically stubs
+autosummary_generate = glob.glob("packages" + os.sep + "*.rst")
+
+# If true, autosummary already overwrites stub files by generated contents.
+autosummary_generate_overwrite = False
+
+# Don't merge __init__ method in auoclass content
+autoclass_content = 'class'
+
+# The default options for autodoc directives. They are applied to all autodoc
+# directives automatically. It must be a dictionary which maps option names to
+# the values.
+# The supported options are 'members', 'member-order', 'undoc-members',
+# 'private-members', 'special-members', 'inherited-members',
+# 'show-inheritance', 'ignore-module-all', 'imported-members' and
+# 'exclude-members'.
+autodoc_default_options = {
+    'members': True,
+    'member-order': 'bysource',
+    'undoc-members': True,
+    'private-members': True,
+    'special-members': True,
+    'inherited-members': True,
+}

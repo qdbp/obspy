@@ -19,7 +19,7 @@ const csso = require('gulp-csso');
 const PATHS = {
   scripts: {
     src: './assets/scripts/*.js',
-    dest: './src/egu/static/js/',
+    dest: './_static/js/',
   },
   styles: {
     src: './_static/css/**/*.scss',
@@ -59,7 +59,8 @@ const images = gulp.parallel(
 
 // handle scripts
 function scripts_clean() {
-  return del([PATHS.scripts.dest + '*.min.js']);
+  return del([PATHS.scripts.dest + '*.min.js',
+              PATHS.scripts.dest + 'maps/*.map']);
 }
 
 function scripts_build() {
@@ -77,7 +78,8 @@ const js = gulp.series(scripts_clean, scripts_build);
 
 // handle styles
 function styles_clean() {
-  return del([PATHS.styles.dest + '*.min.css']);
+  return del([PATHS.styles.dest + '*.min.css',
+              PATHS.styles.dest + 'maps/*.map']);
 }
 
 function styles_check() {

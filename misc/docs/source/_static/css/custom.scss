@@ -1,0 +1,41 @@
+// sass-lint:disable no-color-literals
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .figure {
+    width: 30%;
+
+    img {
+      display: block;
+      padding: 4px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      transition: .2s ease-in-out;
+
+      &:hover {
+        border-color: #428bca;
+      }
+    }
+  }
+}
+
+
+dl {
+  &.field-list {
+    background-color: #ede;
+
+    dt {
+      padding: 12px;
+    }
+
+    dd {
+      background-color: #eef;
+      padding: 12px;
+    }
+  }
+}
