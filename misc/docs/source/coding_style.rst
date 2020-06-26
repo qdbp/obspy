@@ -46,17 +46,12 @@ manner:
 .. _SciPy: https://scipy.scipy.org/
 .. _matplotlib: http://matplotlib.org/
 
-Import statements in source code are grouped by ``__future__``, standard
-library, third party packages and finally obspy imports. Inside blocks
+Import statements in source code are grouped by standard library imports,
+followed by third party packages and finally obspy imports. Inside blocks
 ``from ...`` imports come after ``import ...`` statements, and both should be
 sorted alphabetically:
 
 .. code-block:: python
-
-    from __future__ import (absolute_import, division, print_function,
-                            unicode_literals)
-    from future.builtins import *  # NOQA
-    from future.utils import native_str
 
     import inspect
     import math
@@ -253,17 +248,18 @@ made for each single publication (ideally with an URL or DOI), using first
 author and year as article identifier::
 
     @article{Beyreuther2010,
-    author = {Beyreuther, Moritz and Barsch, Robert and Krischer,
-              Lion and Megies, Tobias and Behr, Yannik and Wassermann, Joachim},
-    title = {ObsPy: A Python Toolbox for Seismology},
-    volume = {81},
-    number = {3},
-    pages = {530-533},
-    year = {May/June 2010},
-    doi = {10.1785/gssrl.81.3.530},
-    URL = {http://www.seismosoc.org/publications/SRL/SRL_81/srl_81-3_es/},
-    eprint = {http://srl.geoscienceworld.org/content/81/3/530.full.pdf+html},
-    journal = {Seismological Research Letters}
+      author = {Beyreuther, Moritz and Barsch, Robert and Krischer,
+                Lion and Megies, Tobias and Behr, Yannik and
+                Wassermann, Joachim},
+      title = {ObsPy: A Python Toolbox for Seismology},
+      volume = {81},
+      number = {3},
+      pages = {530-533},
+      year = {May/June 2010},
+      doi = {10.1785/gssrl.81.3.530},
+      URL = {http://www.seismosoc.org/publications/SRL/SRL_81/srl_81-3_es/},
+      eprint = {http://srl.geoscienceworld.org/content/81/3/530.full.pdf+html},
+      journal = {Seismological Research Letters}
     }
 
 This entry can then be referenced (using the bibtex article identifier) in
