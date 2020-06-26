@@ -18,7 +18,7 @@ const csso = require('gulp-csso');
 // define paths
 const PATHS = {
   scripts: {
-    src: './assets/scripts/*.js',
+    src: './_static/js/**/*.js',
     dest: './_static/js/',
   },
   styles: {
@@ -30,7 +30,7 @@ const PATHS = {
     dest: './_images/',
   },
   logos: {
-    src: './_static/**/*',
+    src: './_static/*logo*',
     dest: './_static/',
   },
 };
@@ -79,7 +79,7 @@ const js = gulp.series(scripts_clean, scripts_build);
 // handle styles
 function styles_clean() {
   return del([PATHS.styles.dest + '*.min.css',
-              PATHS.styles.dest + 'maps/*.map']);
+              PATHS.styles.dest + '**/*.map']);
 }
 
 function styles_check() {
