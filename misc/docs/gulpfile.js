@@ -18,12 +18,12 @@ const csso = require('gulp-csso');
 // define paths
 const PATHS = {
   scripts: {
-    src: './source/_static/js/**/*.js',
+    src: './source/_static/js/*.js',
     dest: './source/_static/js/',
     dest2: './build/html/_static/js/',
   },
   styles: {
-    src: './source/_static/css/**/*.scss',
+    src: './source/_static/css/*.scss',
     dest: './source/_static/css/',
     dest2: './build/html/_static/css/',
   },

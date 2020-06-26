@@ -1,17 +1,18 @@
-// sass-lint:disable no-color-literals
+// sass-lint:disable no-color-literals no-important
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   .figure {
-    width: 30%;
+    width: 33%;
+    padding: 5px;
+    margin-bottom: 0 !important;
 
     img {
       display: block;
-      padding: 4px;
-      margin-bottom: 20px;
+      padding: 5px;
       background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 4px;
@@ -37,5 +38,17 @@ dl {
       background-color: #eef;
       padding: 12px;
     }
+  }
+}
+
+
+.rst-content {
+  blockquote {
+    padding: 0 24px;
+    color: #6a737d;
+    border-left: 5px solid #dfe2e5;
+    line-height: 24px;
+    margin-bottom: 24px;
+    margin-left: 0;
   }
 }
