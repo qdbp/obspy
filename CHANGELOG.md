@@ -26,7 +26,7 @@ maintenance_1.2.x
 
 1.2.1
 =====
-(doi: 10.5281/zenodo.3706479)
+https://doi.org/10.5281/zenodo.3706479
 
 Changes
 -------
@@ -38,7 +38,7 @@ Changes
 
 1.2.0
 =====
-(doi: 10.5281/zenodo.3674646)
+https://doi.org/10.5281/zenodo.3674646
 
 Work on this release was in parts and among others supported by the following
 institutions/companies and grants (in alphabetical order):
@@ -307,7 +307,7 @@ Changes
 
 1.1.1
 =====
-(doi: 10.5281/zenodo.1040770)
+https://doi.org/10.5281/zenodo.1040770
 
 - General
   * Tests pass with numpy 1.14 (see #2044).
@@ -425,7 +425,7 @@ Changes
 
 1.1.0
 =====
-(doi: 10.5281/zenodo.165135)
+https://doi.org/10.5281/zenodo.165135
 
 - General
   * Read support for Guralp Compressed Format (GCF) waveform data,
@@ -640,7 +640,7 @@ Changes
 
 1.0.3
 =====
-(doi: 10.5281/zenodo.165134)
+https://doi.org/10.5281/zenodo.165134
 
 - obspy.core
   * properly pass through kwargs specified for Trace.plot() down to the
@@ -704,7 +704,7 @@ Changes
 
 1.0.2
 =====
-(doi: 10.5281/zenodo.49636)
+https://doi.org/10.5281/zenodo.49636
 
 - obspy.core
   * Added workaround for numpy issue where many FFTs of various lengths fill
@@ -779,7 +779,7 @@ Changes
 
 1.0.1
 =====
-(doi: 10.5281/zenodo.48254)
+https://doi.org/10.5281/zenodo.48254
 
 - General
   * Some methods might have unnecessarily upcasted float32 arrays to float64.
@@ -824,7 +824,7 @@ Changes
 
 1.0.0
 =====
-(doi: 10.5281/zenodo.46151)
+https://doi.org/10.5281/zenodo.46151
 
 - General
   * Requirements have been increased to reflect latest distributions:
@@ -979,7 +979,7 @@ Changes
 
 0.10.3
 ======
-(doi: 10.5281/zenodo.46150)
+https://doi.org/10.5281/zenodo.46150
 
 - obspy.core
   * Fix reading of multiple catalog files using globs (see #1065).
@@ -1042,7 +1042,7 @@ Changes
 
 0.10.2
 ======
-(doi: 10.5281/zenodo.17641)
+https://doi.org/10.5281/zenodo.17641
 
 - obspy.core
   * Fix catalog plot with events that have no origin depth or
@@ -1069,19 +1069,22 @@ Changes
 
 0.10.1
 ======
-(doi: 10.5281/zenodo.16248)
+https://doi.org/10.5281/zenodo.16248
 
 - minor changes for correct distribution of official release
   tar/zipball (see #993, #994)
 - one minor encoding-related bugfix in mopad script (see #992)
 
-0.10.0: (doi: 10.5281/zenodo.16200)
-- Highlights:
+0.10.0
+======
+https://doi.org/10.5281/zenodo.16200
+
+- Highlights
   * Python3 support
   * anaconda support
   * New formats: AH, CNV, Kinemetrics EVT, NDK, NLLOC, PDAS, ZMAP
   * ObsPy licensed under LGPL v3.0 now as a whole.
-- General:
+- General
   * Support for Python 3.3 and 3.4 in addition to 2.6 and 2.7
   * ObsPy licensed under LGPL v3.0 now as a whole.
   * More generic processing history for most Stream and Trace methods.
@@ -1121,13 +1124,13 @@ Changes
     Catalog/Event.write() (see obspy.cnv and #905)
   * better customizable control during merging traces with sub-sample shift
     of sampling points (see #980)
-- obspy.cnv:
+- obspy.cnv
   * new plugin to write CNV event files (used by VELEST) from
     Catalog/Event objects. (see #905)
-- obspy.css:
+- obspy.css
   * Support for little-endian binary and ASCII files (see #881).
   * Support exporting Inventory objects to CSS relations.
-- obspy.fdsn:
+- obspy.fdsn
   * WADL files are cached per Python process.
   * Bulk station downloading using POST requests.
   * Support for FDSNWS 1.1, e.g. the `matchtimeseries` parameter for the
@@ -1144,7 +1147,7 @@ Changes
     * The '"local"` projection now uses the Albers Equal Area projection.
 - obspy.kinemetrics
   * New submodule for reading the Kinemetrics EVT waveform format
-- obspy.mseed:
+- obspy.mseed
   * Support for reading and writing all encodings supported by libmseed.
   * proper error reporting while reading
   * `details=True` when reading will now write to
@@ -1166,26 +1169,26 @@ Changes
       - Faster reading of a single record header
       - Added option "-a" to print information of all records
   * upgrade to libmseed 2.15
-- obspy.ndk:
+- obspy.ndk
   * New submodule able to read NDK files from the Global CMT project.
-- obspy.neries:
+- obspy.neries
   * The whole module is deprecated and will be removed with the next major
     release. To access EMSC event data please use the obspy.fdsn client
     (use `Client(base_url='NERIES', ...)`), for access to ORFEUS waveform
     data please use the obspy.fdsn client (use
     `Client(base_url='ORFEUS', ...)`) and for travel times please use
     obspy.taup.
-- obspy.nlloc:
+- obspy.nlloc
   * new plugins to write NonLinLoc Phase observations files from
     Catalog/Event objects and to read NonLinLoc Hypocenter-Phase file into
     Catalog/Event objects. (see #900)
-- obspy.pdas:
+- obspy.pdas
   * read support for PDAS waveform files
-- obspy.sac:
+- obspy.sac
   * New `byteorder` option for writing sac files to disk.
   * Can now read/write from/to file-like objects like io.BytesIO and open
     files.
-- obspy.seedlink:
+- obspy.seedlink
   * bugfix: INFO responses from the IRIS ringserver are now parsed
     correctly (see #807)
   * New submodule `easyseedlink` providing an easier way to create
@@ -1194,13 +1197,13 @@ Changes
     requests of finite time windows (i.e. non-continuous programs)
   * Fix memory leak in `SLClient` (MiniSEED record leak in packet parser,
     see #918)
-- obspy.seisan:
+- obspy.seisan
   * bugfix the actual data were misaligned by one
-- obspy.seishub:
+- obspy.seishub
   * use specified timeout in all requests to server (see #786)
   * Helper method `Client.event.getEvents()` to fetch a `Catalog` object
     from a seishub server of version 1.4.0 or higher.
-- obspy.signal:
+- obspy.signal
   * Increased performance of PPSD plotting.
   * Interpolating methods. Wrappers around routines from scipy and a custom
     `weighted average slopes` method from Wiggins 1976.
@@ -1209,21 +1212,21 @@ Changes
   * PPSD: water level in instrument correction can now be specified by user
     on PPSD initialization
   * New polarization analysis methods: flinn, vidale, pm
-- obspy.station:
+- obspy.station
   * add plotting methods (response/bode, location maps) to
     Inventory/Station/Channel/Response objects (see #750)
   * add get_coordinates method to inventory and network objects (see #740)
   * read/write support for DataAvailability tags in StationXML files.
   * write support for SACPZ ASCII representation of channel responses.
-- obspy.taup:
+- obspy.taup
   * Replaced Fortran implementation with much more powerful Python port of
     Java TauP. This enabled us to drop all Fortran code, which simplifies
     releases and builds tremendously.
-- obspy.xseed:
+- obspy.xseed
   * add support for Poles and Zeros type "B" (Analog, Hz), see #899
-- obspy.zmap:
+- obspy.zmap
   * New module which adds ZMAP read/write support
-- scripts:
+- scripts
   * All scripts now require argparse instead of optparse.
   * All scripts now accept -V or --version to print version information.
   * obspy-dataless2xseed: -v and --version options are renamed to -x and
@@ -1279,7 +1282,7 @@ Changes
 
 0.9.2
 =====
-(doi: 10.5281/zenodo.10648)
+https://doi.org/10.5281/zenodo.10648
 
 - general
   * fix installation on CygWin (see #755)
