@@ -19,9 +19,11 @@ build/
 dist/
 distribute-*.egg
 distribute-*.tar.gz
-misc/docs/source/packages/autogen
+misc/docs/source/packages/autogen/
 misc/docs/source/credits.rst
 misc/docs/source/citations.rst
+misc/docs/source/node_modules/
+misc/docs/source/package-lock.json
 misc/docs/build/
 misc/docker/logs/
 obspy/lib/*.pyd
