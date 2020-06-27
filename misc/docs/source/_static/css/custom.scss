@@ -4,6 +4,19 @@
   margin: 0 !important;
 }
 
+.wy-nav-content {
+  max-width: 100%;
+}
+
+footer {
+  font-size: 12px;
+
+  p {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+}
+
 
 // gallery
 
@@ -14,7 +27,7 @@
   margin-bottom: 2em;
 
   .figure {
-    width: 33%;
+    width: 20%;
     padding: 5px;
     margin-bottom: 0 !important;
 
@@ -93,7 +106,8 @@ dl {
 
 .banner {
   margin-bottom: 0 !important;
-  width: 100%;
+  float: right;
+  clear: both;
 }
 
 
@@ -132,6 +146,11 @@ dl {
 // responsive table in startpage
 
 @media all and (max-width: 1024px) {
+  .banner {
+    float: none;
+    display: block;
+  }
+
   .startpage {
     .hlist {
       td {

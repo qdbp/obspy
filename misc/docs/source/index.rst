@@ -1,9 +1,9 @@
+ObsPy Documentation (|release|)
+===============================
+
 .. image:: _static/obspy_logo_full.svg
     :alt: ObsPy logo
     :class: banner
-
-ObsPy Documentation (|release|)
-===============================
 
 ObsPy is an open-source project dedicated to provide a **Python framework for
 processing seismological data**. It provides parsers for common file formats,
