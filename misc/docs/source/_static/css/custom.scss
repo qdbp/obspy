@@ -1,5 +1,9 @@
 // sass-lint:disable no-color-literals no-important
 
+.logo {
+  margin: 0 !important;
+}
+
 
 // gallery
 
@@ -49,7 +53,7 @@ dl {
 
 // start page
 
-.logo {
+.banner {
   margin-bottom: 0 !important;
   width: 100%;
 }
@@ -58,6 +62,10 @@ dl {
 .startpage {
   a {
     font-size: 1.3em;
+  }
+
+  h2 {
+    margin-top: 1.3em;
   }
 
   .hlist {

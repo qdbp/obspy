@@ -27,15 +27,15 @@ matplotlib.use("agg")
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-sys.path.insert(0, os.path.abspath('.') + os.sep + '_ext')
+sys.path.append(os.path.abspath('_ext'))
 
 
 # -- Project information -----------------------------------------------------
 project = 'ObsPy'
 author = 'The ObsPy Development Team (devs@obspy.org)'
 year = datetime.date.today().year
-copyright = '%d, The ObsPy Development Team (devs@obspy.org)' % (year)
-version = ".".join(obspy.__version__.split(".")[:2])
+copyright = '2012-{}, The ObsPy Development Team (devs@obspy.org)'.format(year)
+version = ".".join(obspy.__version__.split(".")[:3])
 release = obspy.__version__
 
 
@@ -97,6 +97,7 @@ intersphinx_mapping = {
     'scipy': ('https://docs.scipy.org/doc/scipy/reference/', None),
     'matplotlib': ('https://matplotlib.org/', None),
     'sqlalchemy': ('https://docs.sqlalchemy.org/en/latest/', None),
+    'pip': ('https://pip.pypa.io/en/stable/', None),
 }
 
 # A boolean that decides whether module names are prepended to all object names
@@ -108,7 +109,6 @@ add_module_names = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
 html_theme = "sphinx_rtd_theme"
 
 html_logo = '_static/obspy_logo_no_text.svg'

@@ -293,8 +293,9 @@ Gallery
 
     </div>
 
+
 Colormap comparison
-===================
+"""""""""""""""""""
 
 .. raw:: html
 
