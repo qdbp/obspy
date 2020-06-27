@@ -134,6 +134,12 @@ html_additional_pages = {
 # using the given strftime format.
 html_last_updated_fmt = '%Y-%m-%dT%H:%M:%S'
 
+
+# If true, a list all whose items consist of a single paragraph and/or a
+# sub-list all whose items etc… (recursive definition) will not use the <p>
+# element for any of its items.
+html_compact_lists = True
+
 # generate automatically stubs
 autosummary_generate = glob.glob("packages" + os.sep + "*.rst")
 
