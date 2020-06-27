@@ -79,7 +79,7 @@ source_suffix = {
 templates_path = ['_templates']
 
 # The master toctree document.
-master_doc = 'contents'
+master_doc = 'index'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -128,9 +128,11 @@ html_css_files = [
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
 html_additional_pages = {
-#    'index': 'index.html',
-    'build_status': 'build_status.html'
 }
+
+# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
+# using the given strftime format.
+html_last_updated_fmt = '%Y-%m-%dT%H:%M:%S'
 
 # generate automatically stubs
 autosummary_generate = glob.glob("packages" + os.sep + "*.rst")

@@ -1,5 +1,8 @@
 // sass-lint:disable no-color-literals no-important
 
+
+// gallery
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -26,29 +29,69 @@
 }
 
 
+// parameters
+
 dl {
   &.field-list {
     background-color: #ede;
 
     dt {
-      padding: 12px;
+      padding: 6px 12px;
     }
 
     dd {
       background-color: #eef;
-      padding: 12px;
+      padding: 6px 12px;
     }
   }
 }
 
 
-.rst-content {
-  blockquote {
-    padding: 0 24px;
-    color: #6a737d;
-    border-left: 5px solid #dfe2e5;
-    line-height: 24px;
-    margin-bottom: 24px;
-    margin-left: 0;
+// start page
+
+.logo {
+  margin-bottom: 0 !important;
+  width: 100%;
+}
+
+
+.startpage {
+  a {
+    font-size: 1.3em;
+  }
+
+  .hlist {
+    margin-bottom: 1.3em;
+
+    td {
+      width: 50%;
+    }
+
+    li {
+      list-style: none !important;
+      margin: 0 0 1.3em;
+    }
+
+    p {
+      margin: 0 !important;
+
+      & + p {
+        font-size: .85em;
+      }
+    }
+  }
+}
+
+
+// responsive table in startpage
+
+@media all and (max-width: 1024px) {
+  .startpage {
+    .hlist {
+      td {
+        display: block;
+        width: 100% !important;
+      }
+    }
   }
 }

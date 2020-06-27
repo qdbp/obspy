@@ -1,7 +1,7 @@
 .. _tutorial:
 
-ObsPy Tutorial
-==============
+Tutorial
+========
 
 .. note::
     A one-hour introduction to ObsPy is

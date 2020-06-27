@@ -1,7 +1,7 @@
 .. _contents:
 
-ObsPy Documentation Contents
-============================
+Table of Contents
+=================
 
 .. toctree::
    :maxdepth: 3
@@ -15,11 +15,3 @@ ObsPy Documentation Contents
    contributing
    code_of_conduct
    credits
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
