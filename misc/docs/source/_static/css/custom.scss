@@ -34,6 +34,24 @@
 }
 
 
+@media all and (max-width: 1024px) {
+  .gallery {
+    .figure {
+      width: 50%;
+    }
+  }
+}
+
+
+@media all and (max-width: 640px) {
+  .gallery {
+    .figure {
+      width: 100%;
+    }
+  }
+}
+
+
 // parameters
 
 dl {
