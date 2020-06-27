@@ -1,7 +1,8 @@
 master
 ======
 
-Changes:
+*Changes*
+
 - obspy.clients.filesystem
   * add get_waveforms_bulk() method to SDS client (see #2616, #2626)
 
@@ -26,10 +27,10 @@ maintenance_1.2.x
 
 1.2.1
 =====
-https://doi.org/10.5281/zenodo.3706479
+[![ObsPy 1.2.1](https://zenodo.org/badge/DOI/10.5281/zenodo.3706479.svg)](https://doi.org/10.5281/zenodo.3706479)
 
-Changes
--------
+
+*Changes*
 
 - fix an installation issue with pip and setuptools version 46 (see #2578)
 - fix response plots when providing `axes=...` with a numpy array of Axes
@@ -38,7 +39,7 @@ Changes
 
 1.2.0
 =====
-https://doi.org/10.5281/zenodo.3674646
+[![ObsPy 1.2.0](https://zenodo.org/badge/DOI/10.5281/zenodo.3674646.svg)](https://doi.org/10.5281/zenodo.3674646)
 
 Work on this release was in parts and among others supported by the following
 institutions/companies and grants (in alphabetical order):
@@ -68,8 +69,7 @@ institutions/companies and grants (in alphabetical order):
 - The Royal Observatory of Belgium
 - U.S. Geological Survey
 
-Changes
--------
+*Changes*
 
 - obspy.core
   * Inventory objects have been adapted to StationXML 1.1 for details on
@@ -307,7 +307,7 @@ Changes
 
 1.1.1
 =====
-https://doi.org/10.5281/zenodo.1040770
+[![ObsPy 1.1.1](https://zenodo.org/badge/DOI/10.5281/zenodo.1040770.svg)](https://doi.org/10.5281/zenodo.1040770)
 
 - General
   * Tests pass with numpy 1.14 (see #2044).
@@ -425,7 +425,7 @@ https://doi.org/10.5281/zenodo.1040770
 
 1.1.0
 =====
-https://doi.org/10.5281/zenodo.165135
+[![ObsPy 1.1.0](https://zenodo.org/badge/DOI/10.5281/zenodo.165135.svg)](https://doi.org/10.5281/zenodo.165135)
 
 - General
   * Read support for Guralp Compressed Format (GCF) waveform data,
@@ -640,7 +640,7 @@ https://doi.org/10.5281/zenodo.165135
 
 1.0.3
 =====
-https://doi.org/10.5281/zenodo.165134
+[![ObsPy 1.0.3](https://zenodo.org/badge/DOI/10.5281/zenodo.165134.svg)](https://doi.org/10.5281/zenodo.165134)
 
 - obspy.core
   * properly pass through kwargs specified for Trace.plot() down to the
@@ -704,7 +704,7 @@ https://doi.org/10.5281/zenodo.165134
 
 1.0.2
 =====
-https://doi.org/10.5281/zenodo.49636
+[![ObsPy 1.0.2](https://zenodo.org/badge/DOI/10.5281/zenodo.49636.svg)](https://doi.org/10.5281/zenodo.49636)
 
 - obspy.core
   * Added workaround for numpy issue where many FFTs of various lengths fill
@@ -779,7 +779,7 @@ https://doi.org/10.5281/zenodo.49636
 
 1.0.1
 =====
-https://doi.org/10.5281/zenodo.48254
+[![ObsPy 1.0.1](https://zenodo.org/badge/DOI/10.5281/zenodo.48254.svg)](https://doi.org/10.5281/zenodo.48254)
 
 - General
   * Some methods might have unnecessarily upcasted float32 arrays to float64.
@@ -824,7 +824,7 @@ https://doi.org/10.5281/zenodo.48254
 
 1.0.0
 =====
-https://doi.org/10.5281/zenodo.46151
+[![ObsPy 1.0.0](https://zenodo.org/badge/DOI/10.5281/zenodo.46151.svg)](https://doi.org/10.5281/zenodo.46151)
 
 - General
   * Requirements have been increased to reflect latest distributions:
@@ -979,7 +979,7 @@ https://doi.org/10.5281/zenodo.46151
 
 0.10.3
 ======
-https://doi.org/10.5281/zenodo.46150
+[![ObsPy 0.10.3](https://zenodo.org/badge/DOI/10.5281/zenodo.46150.svg)](https://doi.org/10.5281/zenodo.46150)
 
 - obspy.core
   * Fix reading of multiple catalog files using globs (see #1065).
@@ -1042,7 +1042,7 @@ https://doi.org/10.5281/zenodo.46150
 
 0.10.2
 ======
-https://doi.org/10.5281/zenodo.17641
+[![ObsPy 0.10.2](https://zenodo.org/badge/DOI/10.5281/zenodo.17641.svg)](https://doi.org/10.5281/zenodo.17641)
 
 - obspy.core
   * Fix catalog plot with events that have no origin depth or
@@ -1069,7 +1069,7 @@ https://doi.org/10.5281/zenodo.17641
 
 0.10.1
 ======
-https://doi.org/10.5281/zenodo.16248
+[![ObsPy 0.10.1](https://zenodo.org/badge/DOI/10.5281/zenodo.16248.svg)](https://doi.org/10.5281/zenodo.16248)
 
 - minor changes for correct distribution of official release
   tar/zipball (see #993, #994)
@@ -1077,7 +1077,7 @@ https://doi.org/10.5281/zenodo.16248
 
 0.10.0
 ======
-https://doi.org/10.5281/zenodo.16200
+[![ObsPy 0.10.0](https://zenodo.org/badge/DOI/10.5281/zenodo.16200.svg)](https://doi.org/10.5281/zenodo.16200)
 
 - Highlights
   * Python3 support
@@ -1282,7 +1282,7 @@ https://doi.org/10.5281/zenodo.16200
 
 0.9.2
 =====
-https://doi.org/10.5281/zenodo.10648
+[![ObsPy 0.9.2](https://zenodo.org/badge/DOI/10.5281/zenodo.10648.svg)](https://doi.org/10.5281/zenodo.10648)
 
 - general
   * fix installation on CygWin (see #755)
