@@ -27,7 +27,7 @@ maintenance_1.2.x
 
 1.2.1
 =====
-[![ObsPy 1.2.1](https://zenodo.org/badge/DOI/10.5281/zenodo.3706479.svg)](https://doi.org/10.5281/zenodo.3706479)
+https://doi.org/10.5281/zenodo.3706479
 
 
 *Changes*
@@ -39,7 +39,7 @@ maintenance_1.2.x
 
 1.2.0
 =====
-[![ObsPy 1.2.0](https://zenodo.org/badge/DOI/10.5281/zenodo.3674646.svg)](https://doi.org/10.5281/zenodo.3674646)
+https://doi.org/10.5281/zenodo.3674646
 
 Work on this release was in parts and among others supported by the following
 institutions/companies and grants (in alphabetical order):
@@ -307,7 +307,7 @@ institutions/companies and grants (in alphabetical order):
 
 1.1.1
 =====
-[![ObsPy 1.1.1](https://zenodo.org/badge/DOI/10.5281/zenodo.1040770.svg)](https://doi.org/10.5281/zenodo.1040770)
+https://doi.org/10.5281/zenodo.1040770
 
 - General
   * Tests pass with numpy 1.14 (see #2044).
@@ -425,7 +425,7 @@ institutions/companies and grants (in alphabetical order):
 
 1.1.0
 =====
-[![ObsPy 1.1.0](https://zenodo.org/badge/DOI/10.5281/zenodo.165135.svg)](https://doi.org/10.5281/zenodo.165135)
+https://doi.org/10.5281/zenodo.165135
 
 - General
   * Read support for Guralp Compressed Format (GCF) waveform data,
@@ -640,7 +640,7 @@ institutions/companies and grants (in alphabetical order):
 
 1.0.3
 =====
-[![ObsPy 1.0.3](https://zenodo.org/badge/DOI/10.5281/zenodo.165134.svg)](https://doi.org/10.5281/zenodo.165134)
+https://doi.org/10.5281/zenodo.165134
 
 - obspy.core
   * properly pass through kwargs specified for Trace.plot() down to the
@@ -704,7 +704,7 @@ institutions/companies and grants (in alphabetical order):
 
 1.0.2
 =====
-[![ObsPy 1.0.2](https://zenodo.org/badge/DOI/10.5281/zenodo.49636.svg)](https://doi.org/10.5281/zenodo.49636)
+https://doi.org/10.5281/zenodo.49636
 
 - obspy.core
   * Added workaround for numpy issue where many FFTs of various lengths fill
@@ -779,7 +779,7 @@ institutions/companies and grants (in alphabetical order):
 
 1.0.1
 =====
-[![ObsPy 1.0.1](https://zenodo.org/badge/DOI/10.5281/zenodo.48254.svg)](https://doi.org/10.5281/zenodo.48254)
+https://doi.org/10.5281/zenodo.48254
 
 - General
   * Some methods might have unnecessarily upcasted float32 arrays to float64.
@@ -824,7 +824,7 @@ institutions/companies and grants (in alphabetical order):
 
 1.0.0
 =====
-[![ObsPy 1.0.0](https://zenodo.org/badge/DOI/10.5281/zenodo.46151.svg)](https://doi.org/10.5281/zenodo.46151)
+https://doi.org/10.5281/zenodo.46151
 
 - General
   * Requirements have been increased to reflect latest distributions:
@@ -979,7 +979,7 @@ institutions/companies and grants (in alphabetical order):
 
 0.10.3
 ======
-[![ObsPy 0.10.3](https://zenodo.org/badge/DOI/10.5281/zenodo.46150.svg)](https://doi.org/10.5281/zenodo.46150)
+https://doi.org/10.5281/zenodo.46150
 
 - obspy.core
   * Fix reading of multiple catalog files using globs (see #1065).
@@ -1042,7 +1042,7 @@ institutions/companies and grants (in alphabetical order):
 
 0.10.2
 ======
-[![ObsPy 0.10.2](https://zenodo.org/badge/DOI/10.5281/zenodo.17641.svg)](https://doi.org/10.5281/zenodo.17641)
+https://doi.org/10.5281/zenodo.17641
 
 - obspy.core
   * Fix catalog plot with events that have no origin depth or
@@ -1069,7 +1069,7 @@ institutions/companies and grants (in alphabetical order):
 
 0.10.1
 ======
-[![ObsPy 0.10.1](https://zenodo.org/badge/DOI/10.5281/zenodo.16248.svg)](https://doi.org/10.5281/zenodo.16248)
+https://doi.org/10.5281/zenodo.16248
 
 - minor changes for correct distribution of official release
   tar/zipball (see #993, #994)
@@ -1077,7 +1077,7 @@ institutions/companies and grants (in alphabetical order):
 
 0.10.0
 ======
-[![ObsPy 0.10.0](https://zenodo.org/badge/DOI/10.5281/zenodo.16200.svg)](https://doi.org/10.5281/zenodo.16200)
+https://doi.org/10.5281/zenodo.16200
 
 - Highlights
   * Python3 support
@@ -1282,7 +1282,7 @@ institutions/companies and grants (in alphabetical order):
 
 0.9.2
 =====
-[![ObsPy 0.9.2](https://zenodo.org/badge/DOI/10.5281/zenodo.10648.svg)](https://doi.org/10.5281/zenodo.10648)
+https://doi.org/10.5281/zenodo.10648
 
 - general
   * fix installation on CygWin (see #755)
