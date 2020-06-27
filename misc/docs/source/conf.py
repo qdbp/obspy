@@ -140,27 +140,17 @@ html_last_updated_fmt = '%Y-%m-%dT%H:%M:%S'
 # element for any of its items.
 html_compact_lists = True
 
+
+# -- Options for autodoc / autosummary exensions -----------------------------
+
+# Don't merge __init__ method in auoclass content
+autoclass_content = 'class'
+
 # generate automatically stubs
-autosummary_generate = glob.glob("packages" + os.sep + "*.rst")
+autosummary_generate = True
 
 # If true, autosummary already overwrites stub files by generated contents.
 autosummary_generate_overwrite = False
 
 # Don't merge __init__ method in auoclass content
 autoclass_content = 'class'
-
-# The default options for autodoc directives. They are applied to all autodoc
-# directives automatically. It must be a dictionary which maps option names to
-# the values.
-# The supported options are 'members', 'member-order', 'undoc-members',
-# 'private-members', 'special-members', 'inherited-members',
-# 'show-inheritance', 'ignore-module-all', 'imported-members' and
-# 'exclude-members'.
-autodoc_default_options = {
-    'members': True,
-    'member-order': 'bysource',
-    'undoc-members': True,
-    'private-members': True,
-    'special-members': True,
-    'inherited-members': True,
-}
