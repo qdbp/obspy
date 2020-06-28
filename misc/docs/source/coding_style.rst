@@ -199,8 +199,8 @@ which renders like this:
    :param value: exception value
    :param tb: traceback object
    :param limit: maximum number of stack frames to show
-   :type limit: integer or None
-   :rtype: list of strings
+   :type limit: int or None
+   :rtype: list of str
    :return: Traceback messages.
 
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html

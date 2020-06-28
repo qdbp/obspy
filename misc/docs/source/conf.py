@@ -51,7 +51,6 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.doctest',
     'sphinx.ext.autodoc',
-    'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.mathjax',
     'sphinx.ext.autosummary',
@@ -84,11 +83,21 @@ master_doc = 'index'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', '_templates', '_ext']
+exclude_patterns = [
+    '_ext', '_images', '_static', '_templates', 'bibliography', 'credits']
 
 # Warn about all references where the target cannot be found.
 nitpicky = True
-nitpick_ignore = ['norm_resp']
+nitpick_ignore = [
+    ('py:class', 'list of str'),
+    ('py:class', 'optional'),
+    ('py:class', 'file'),
+]
+
+# suppress built-in types by default in nitpick
+import builtins
+for name in dir(builtins):
+    nitpick_ignore += [('py:class', name)]
 
 # configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
@@ -103,6 +112,12 @@ intersphinx_mapping = {
 # A boolean that decides whether module names are prepended to all object names
 # (for object types where a “module” of some kind is defined).
 add_module_names = False
+
+# A list of ignored prefixes for module index sorting.
+modindex_common_prefix = ['obspy.']
+
+# These values determine how to format the current date.
+today_fmt = "%B %d %H o'clock, %Y"
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -141,6 +156,55 @@ html_last_updated_fmt = '%Y-%m-%dT%H:%M:%S'
 html_compact_lists = True
 
 
+# -- Options for LaTeX output -------------------------------------------------
+
+# The paper size ('letter' or 'a4').
+#latex_paper_size = 'letter'
+
+# The font size ('10pt', '11pt' or '12pt').
+#latex_font_size = '10pt'
+
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title, author, documentclass [howto/manual])
+latex_documents = [
+  ('tutorial/index', 'ObsPyTutorial.tex', u'ObsPy Tutorial',
+   u'The ObsPy Development Team (devs@obspy.org)', 'manual'),
+]
+
+# The name of an image file (relative to this directory) to place at the top of
+# the title page.
+#latex_logo = None
+
+# For "manual" documents, if this is true, then toplevel headings are parts,
+# not chapters.
+#latex_use_parts = False
+
+# If true, show page references after internal links.
+#latex_show_pagerefs = False
+
+# If true, show URL addresses after external links.
+#latex_show_urls = False
+
+# Additional stuff for the LaTeX preamble.
+#latex_preamble = ''
+
+# Documents to append as an appendix to all manuals.
+#latex_appendices = []
+
+# If false, no module index is generated.
+#latex_domain_indices = True
+
+
+# -- Options for manual page output -------------------------------------------
+
+# One entry per manual page. List of tuples
+# (source start file, name, description, authors, manual section).
+man_pages = [
+    ('index', 'obspydocumentation', u'ObsPy Documentation',
+     [u'The ObsPy Development Team (devs@obspy.org)'], 1)
+]
+
+
 # -- Options for autodoc / autosummary exensions -----------------------------
 
 # Don't merge __init__ method in auoclass content
@@ -154,3 +218,13 @@ autosummary_generate_overwrite = False
 
 # Don't merge __init__ method in auoclass content
 autoclass_content = 'class'
+
+
+# -- Options for linkcheck exension ------------------------------------------
+linkcheck_timeout = 5
+linkcheck_workers = 10
+
+
+# -- Options for matplotlib plot directive -----------------------------------
+# File formats to generate.
+plot_formats = [('png', 110), ('hires.png', 200), ('pdf', 200)]

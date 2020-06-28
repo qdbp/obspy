@@ -296,7 +296,7 @@ class Scanner(object):
         :param fig: Figure instance to reuse.
         :type plot_x: bool
         :param plot_x: Whether to plot "X" markers at start of all parsed
-            ``Trace``s.
+            :class:`~obspy.core.trace.Trace`s.
         :type plot_gaps: bool
         :param plot_gaps: Whether to plot filled rectangles at data gaps (red)
             and overlaps (blue).

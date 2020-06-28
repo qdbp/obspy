@@ -870,6 +870,7 @@ def _write_stationxml(inventory, file_or_file_object, validate=False,
                       nsmap=None, level="response", **kwargs):
     """
     Writes an inventory object to a buffer.
+
     :type inventory: :class:`~obspy.core.inventory.Inventory`
     :param inventory: The inventory instance to be written.
     :param file_or_file_object: The file or file-like object to be written to.
@@ -880,7 +881,6 @@ def _write_stationxml(inventory, file_or_file_object, validate=False,
     :type nsmap: dict
     :param nsmap: Additional custom namespace abbreviation mappings
         (e.g. `{"edb": "http://erdbeben-in-bayern.de/xmlns/0.1"}`).
-
     """
     if nsmap is None:
         nsmap = {}
