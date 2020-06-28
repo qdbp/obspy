@@ -344,7 +344,7 @@ class NetworkBasemapTestCase(unittest.TestCase):
             net.plot(method='basemap', outfile=ic.name)
 
     @unittest.skipIf(
-        BASEMAP_VERSION >= [1, 2, 2],
+        BASEMAP_VERSION >= [1, 2, 1],
         'ortho projection fails for basemap==1.2.1 - GEOS segmentation fault')
     def test_location_plot_ortho(self):
         """
