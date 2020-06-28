@@ -20,6 +20,7 @@ Pre-Commit Hooks
 In order to further ease the development process you can use pre-commit hooks.
 Pre-commit hooks can be configured in your repository with use of pre-commit_ 
 framework. In order to do that, execute two commands::
+
     pip install pre-commit
     pre-commit install
 
