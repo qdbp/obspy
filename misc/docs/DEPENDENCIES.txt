@@ -5,6 +5,6 @@ sphinx_rtd_theme
 matplotlib
 obspy
 
-# tutorial
-basemap
-mlpy
+# deps used in tutorial but not working anymore
+# basemap
+# mlpy
