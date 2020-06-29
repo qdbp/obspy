@@ -1613,7 +1613,7 @@ https://doi.org/10.5281/zenodo.10648
   * adding 'equal_scale' option to plot() method
   * removing __hash__ fixture for Stream and Trace
   * stream.select works now case insensitive
-  * support for initialization of UTCDateTime from numpy.string_ types
+  * support for initialization of UTCDateTime from numpy.string types
   * new dtype parameter on read method allows converting data into given
     dtype
   * AttribDict may now be initialized with (key, value) kwarg pairs, e.g.

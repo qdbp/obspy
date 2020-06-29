@@ -108,15 +108,33 @@ Indices and Tables
     :hidden:
     :glob:
     :maxdepth: 2
+    :caption: Getting Started
 
     tutorial/index
     gallery
     packages/index
-    changelog
-    citations
-    coding_style
-    contributing
-    code_of_conduct
-    credits
-    contents
 
+
+.. toctree::
+    :hidden:
+    :glob:
+    :maxdepth: 2
+    :caption: Developer Resources
+
+    contributing
+    coding_style
+    code_of_conduct
+    changelog
+
+
+.. toctree::
+    :hidden:
+    :glob:
+    :maxdepth: 2
+    :caption: Indices and Tables
+
+    contents
+    `Index <genindex.html>`_
+    `Python Module Index <py-modindex.html>`_
+    citations
+    credits

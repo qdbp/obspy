@@ -25,6 +25,11 @@ if errorlevel 9009 (
     exit /b 1
 )
 
+if "%1" == "html" (
+    %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O% >html.log 2>&1
+    goto end
+)
+
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 
 if "%1" == "clean" (
