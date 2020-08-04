@@ -34,6 +34,7 @@ from obspy.core.event import (
     OriginQuality, OriginUncertainty, Pick, WaveformStreamID, Arrival,
     Amplitude, FocalMechanism, MomentTensor, NodalPlane, NodalPlanes,
     QuantityError, Tensor, ResourceIdentifier)
+from obspy.core.inventory.util import _resolve_seedid, _add_resolve_seedid_doc
 from obspy.io.nordic import NordicParsingError
 from obspy.io.nordic.utils import (
     _int_conv, _str_conv, _float_conv, _evmagtonor, _nortoevmag,
@@ -355,7 +356,9 @@ def _read_spectral_info(tagged_lines, event=None):
     return spec_inf
 
 
-def read_nordic(select_file, return_wavnames=False, encoding='latin-1'):
+@_add_resolve_seedid_doc
+def read_nordic(select_file, return_wavnames=False, encoding='latin-1',
+                **kwargs):
     """
     Read a catalog of events from a Nordic formatted select file.
 
@@ -392,14 +395,14 @@ def read_nordic(select_file, return_wavnames=False, encoding='latin-1'):
         elif len(event_str) > 0:
             catalog, wav_names = _extract_event(
                 event_str=event_str, catalog=catalog, wav_names=wav_names,
-                return_wavnames=return_wavnames)
+                return_wavnames=return_wavnames, **kwargs)
             event_str = []
     f.close()
     if len(event_str) > 0:
         # May occur if the last line of the file is not blank as it should be
         catalog, wav_names = _extract_event(
             event_str=event_str, catalog=catalog, wav_names=wav_names,
-            return_wavnames=return_wavnames)
+            return_wavnames=return_wavnames, **kwargs)
     if return_wavnames:
         return catalog, wav_names
     for event in catalog:
@@ -407,7 +410,8 @@ def read_nordic(select_file, return_wavnames=False, encoding='latin-1'):
     return catalog
 
 
-def _extract_event(event_str, catalog, wav_names, return_wavnames=False):
+def _extract_event(event_str, catalog, wav_names, return_wavnames=False,
+                   **kwargs):
     """
     Helper to extract event info from a list of line strings.
 
@@ -433,7 +437,8 @@ def _extract_event(event_str, catalog, wav_names, return_wavnames=False):
     new_event = _read_moment_tensors(tagged_lines, new_event)
     if return_wavnames:
         wav_names.append(_readwavename(tagged_lines=tagged_lines['6']))
-    new_event = _read_picks(tagged_lines=tagged_lines, new_event=new_event)
+    new_event = _read_picks(tagged_lines=tagged_lines, new_event=new_event,
+                            **kwargs)
     catalog += new_event
     return catalog, wav_names
 
@@ -637,7 +642,7 @@ def _read_moment_tensors(tagged_lines, event):
     return event
 
 
-def _read_picks(tagged_lines, new_event):
+def _read_picks(tagged_lines, new_event, **kwargs):
     """
     Internal pick reader. Use read_nordic instead.
 
@@ -708,9 +713,12 @@ def _read_picks(tagged_lines, new_event):
             warnings.warn('%s is not currently supported' % header[57:60])
         # finalweight = _int_conv(line[68:70])
         # Create a new obspy.event.Pick class for this pick
-        _waveform_id = WaveformStreamID(station_code=line[1:6].strip(),
-                                        channel_code=line[6:8].strip(),
-                                        network_code='NA')
+
+        widargs = _resolve_seedid(
+            station=line[1:6].strip(), component=line[6:8].strip(), time=time,
+            **kwargs)
+        _waveform_id = WaveformStreamID(*widargs)
+
         pick = Pick(waveform_id=_waveform_id, phase_hint=phase,
                     polarity=polarity, time=time)
         try:
