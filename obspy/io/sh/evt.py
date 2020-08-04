@@ -202,7 +202,7 @@ def _read_evt(filename, encoding='utf-8', **kwargs):
             comp = p.get('component', '')
             pick_kwargs = _kw(p, 'pick')
             widargs = _resolve_seedid(
-                    sta, comp, time=pick_kwargs['time'], **kwargs)
+                sta, comp, time=pick_kwargs['time'], **kwargs)
             wid = WaveformStreamID(*widargs)
             pick = Pick(waveform_id=wid, **pick_kwargs)
             arrival = Arrival(pick_id=pick.resource_id, **_kw(p, 'arrival'))

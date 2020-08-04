@@ -1312,7 +1312,7 @@ def _write_hyp_error_line(origin):
         #     error_line[67:79] = ("%.4e" % (cov(1, 2) / 1.e06)).rjust(12)
         # else:
         cov = Ellipse.from_origin_uncertainty(origin.origin_uncertainty).\
-              to_cov()
+            to_cov()
         errors['x_err'] = sqrt(cov(0, 0)) / 1000.0
         errors['y_err'] = sqrt(cov(1, 1)) / 1000.0
         errors['z_err'] = origin.depth_errors / 1000.0
@@ -1321,7 +1321,7 @@ def _write_hyp_error_line(origin):
     else:
         try:
             errors['x_err'] = origin.longitude_errors.uncertainty / \
-                              _km_to_deg_lon(1.0, origin.latitude)
+                _km_to_deg_lon(1.0, origin.latitude)
             errors['y_err'] = origin.latitude_errors.uncertainty / \
                 _km_to_deg_lat(1.0)
             errors['z_err'] = origin.depth_errors.uncertainty / 1000.0

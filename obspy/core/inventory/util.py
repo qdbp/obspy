@@ -30,6 +30,7 @@ class BaseNode(ComparingObject):
 
     The parent class for the network, station and channel classes.
     """
+
     def __init__(self, code, description=None, comments=None, start_date=None,
                  end_date=None, restricted_status=None, alternate_code=None,
                  historical_code=None, data_availability=None,
@@ -246,6 +247,7 @@ class DataAvailability(ComparingObject):
     :param spans: Time spans with detail information
     :type spans: list of :class:`DataAvailabilitySpan`
     """
+
     def __init__(self, start=None, end=None, spans=None):
         start = start is not None and UTCDateTime(start)
         self.start = start
@@ -298,6 +300,7 @@ class DataAvailabilitySpan(ComparingObject):
         between time series segments in the specified range.
     :type maximum_time_tear: float
     """
+
     def __init__(self, start, end, number_of_segments, maximum_time_tear=None):
         self.start = UTCDateTime(start)
         self.end = UTCDateTime(end)
@@ -326,6 +329,7 @@ class Equipment(ComparingObject):
     """
     An object containing a detailed description of an equipment.
     """
+
     def __init__(self, type=None, description=None, manufacturer=None,
                  vendor=None, model=None, serial_number=None,
                  installation_date=None, removal_date=None,
@@ -607,6 +611,7 @@ class ExternalReference(ComparingObject):
         This type contains a URI and description for external data that users
         may want to reference in StationXML.
     """
+
     def __init__(self, uri, description):
         """
         :type uri: str
@@ -624,6 +629,7 @@ class Comment(ComparingObject):
         Container for a comment or log entry. Corresponds to SEED blockettes
         31, 51 and 59.
     """
+
     def __init__(self, value, id=None, begin_effective_time=None,
                  end_effective_time=None, authors=None, subject=None):
         """
@@ -726,6 +732,7 @@ class Site(ComparingObject):
         Description of a site location using name and optional geopolitical
         boundaries (country, city, etc.).
     """
+
     def __init__(self, name="", description=None, town=None, county=None,
                  region=None, country=None):
         """
@@ -842,6 +849,7 @@ class Distance(FloatWithUncertaintiesAndUnit):
     :type measurement_method: str
     :param measurement_method: Method used in the measurement.
     """
+
     def __init__(self, value, lower_uncertainty=None, upper_uncertainty=None,
                  unit="METERS"):
         super(Distance, self).__init__(
@@ -1076,9 +1084,9 @@ def _warn_on_invalid_uri(uri):
 def _add_resolve_seedid_doc(func):
     """
     The following parameters deal with the problem, that the format
-    only stores station names for the picks, but the Pick object expects
-    a SEED id. The SEED id is looked up for every pick by the
-    following procedure:
+    only stores station names and components for the picks,
+    but the Pick object expects a SEED id.
+    The SEED id is looked up for every pick by the following procedure:
 
     1. look at seedid_map for a direct station name match and use the specified
        template
@@ -1086,13 +1094,15 @@ def _add_resolve_seedid_doc(func):
        use its first channel as template
     3. if 1 and 2 did not succeed, use specified default template
        (default_seedid)
+    4. If 1, 2 and 3 did not succed, set the network and location code
+       to None (default)
 
     :param str filename: File or file-like object in text mode.
     :type inventory: :class:`~obspy.core.inventory.inventory.Inventory`
     :param inventory: Inventory used to retrieve network code, location code
         and channel code of stations (SEED id).
     :param dict seedid_map: Default templates for each station
-        (example: `seedid_map={'MOX': 'GR.{}..HH{}'`).
+        (example: `seedid_map={'MOX': 'GR.{}..HH{}', 'FUR': 'BW.{}..HH{}'}`).
         The values must contain three dots and two `{}` which are
         substituted by station code and component.
     :param str default_seedid: Default SEED id template.
@@ -1103,7 +1113,6 @@ def _add_resolve_seedid_doc(func):
     """
     func.__doc__ = func.__doc__ + __doc__
     return func
-
 
 
 def _seed_id_map(
@@ -1128,9 +1137,9 @@ def _seed_id_map(
 
 
 def _resolve_seedid(station, component, inventory=None,
-        time=None, seedid_map=None, default_seedid=None,
-        key='{sta.code}', id_map=None, id_default=None,
-        unused_kwargs=False, warn=True, **kwargs):
+                    time=None, seedid_map=None, default_seedid=None,
+                    key='{sta.code}', id_map=None, id_default=None,
+                    unused_kwargs=False, warn=True, **kwargs):
     if not unused_kwargs and len(kwargs) > 0:
         raise ValueError(f'Unexpected arguments: {kwargs}')
     if id_map is not None:  # backwards compatibility
@@ -1142,7 +1151,7 @@ def _resolve_seedid(station, component, inventory=None,
         seedid = seedid_map[station].format(station, component)
     elif inventory is not None:
         seedid = _resolve_seedid_from_inventory(
-                station, component, inventory, time=time, warn=warn)
+            station, component, inventory, time=time, warn=warn)
     if seedid is None and default_seedid is not None:
         seedid = default_seedid.format(station, component)
     if seedid is None:

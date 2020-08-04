@@ -35,6 +35,7 @@ class TestNordicMethods(unittest.TestCase):
     """
     Test suite for nordic io operations.
     """
+
     def setUp(self):
         self.path = os.path.dirname(os.path.abspath(inspect.getfile(
             inspect.currentframe())))
@@ -1109,7 +1110,6 @@ class TestNordicMethods(unittest.TestCase):
         self.assertEqual(len(event.origins), 2)
         self.assertEqual(len(event.picks), 17)
         self.assertEqual(event.picks[0].waveform_id.network_code, 'XX')
-
 
 
 def _assert_similarity(event_1, event_2):

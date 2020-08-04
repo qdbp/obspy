@@ -34,6 +34,7 @@ class InventoryTestCase(unittest.TestCase):
     """
     Tests the for :class:`~obspy.core.inventory.inventory.Inventory` class.
     """
+
     def setUp(self):
         self.image_dir = os.path.join(os.path.dirname(__file__), 'images')
         self.nperr = np.geterr()
@@ -718,13 +719,13 @@ class InventoryTestCase(unittest.TestCase):
         self.assertEqual(('GR', 'FUR', '', 'HHZ'),
                          _resolve_seedid('FUR', 'HHZ', inv, time=t_valid))
         self.assertEqual(
-                ('', 'FUR', '', 'HHZ'),
-                _resolve_seedid('FUR', 'HHZ', time=t_invalid,
-                                default_seedid='.{}..{}'))
+            ('', 'FUR', '', 'HHZ'),
+            _resolve_seedid('FUR', 'HHZ', time=t_invalid,
+                            default_seedid='.{}..{}'))
         with self.assertWarnsRegex(UserWarning, 'No matching'):
             self.assertEqual(
-                    (None, 'FUR', None, 'HHZ'),
-                    _resolve_seedid('FUR', 'HHZ', inv, time=t_invalid))
+                (None, 'FUR', None, 'HHZ'),
+                _resolve_seedid('FUR', 'HHZ', inv, time=t_invalid))
         # make a copy, but stripping channels. network lookup should still
         # work, location code lookup obviously not
 #        inv2 = copy.deepcopy(inv)
@@ -752,16 +753,16 @@ class InventoryTestCase(unittest.TestCase):
         inv[-1].code = 'XX'
         with self.assertWarnsRegex(UserWarning, 'No matching'):
             self.assertEqual(
-                    (None, 'FUR', None, 'HHZ'),
-                    _resolve_seedid('FUR', 'HHZ', inv, time=t_valid))
+                (None, 'FUR', None, 'HHZ'),
+                _resolve_seedid('FUR', 'HHZ', inv, time=t_valid))
         # now add some ambiguity in location code only
         inv.networks = [inv[0]]
         inv[0][0].channels.append(copy.deepcopy(inv[0][0][0]))
         inv[0][0][-1].location_code = '01'
         with self.assertWarnsRegex(UserWarning, 'Multiple'):
             self.assertEqual(
-                    ('GR', 'FUR', '', 'HHZ'),
-                    _resolve_seedid('FUR', 'HHZ', inv, time=t_valid))
+                ('GR', 'FUR', '', 'HHZ'),
+                _resolve_seedid('FUR', 'HHZ', inv, time=t_valid))
 
 
 @unittest.skipIf(not BASEMAP_VERSION, 'basemap not installed')
@@ -772,6 +773,7 @@ class InventoryBasemapTestCase(unittest.TestCase):
     """
     Tests the for :meth:`~obspy.station.inventory.Inventory.plot` with Basemap.
     """
+
     def setUp(self):
         self.image_dir = os.path.join(os.path.dirname(__file__), 'images')
         self.nperr = np.geterr()
@@ -859,6 +861,7 @@ class InventoryCartopyTestCase(unittest.TestCase):
     """
     Tests the for :meth:`~obspy.station.inventory.Inventory.plot` with Cartopy.
     """
+
     def setUp(self):
         self.image_dir = os.path.join(os.path.dirname(__file__), 'images')
         self.nperr = np.geterr()
