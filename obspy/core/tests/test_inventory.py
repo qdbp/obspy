@@ -708,6 +708,12 @@ class InventoryTestCase(unittest.TestCase):
         self.assertEqual(('GR', 'FUR', '', 'HHZ'),
                          _resolve_seedid('FUR', 'HHZ', inv))
         self.assertEqual(('GR', 'FUR', '', 'HHZ'),
+                         _resolve_seedid('FUR', 'HZ', inv))
+        self.assertEqual(('GR', 'FUR', '', 'HHZ'),
+                         _resolve_seedid('FUR', 'Z', inv))
+        self.assertEqual(('GR', 'FUR', '', 'HHZ'),
+                         _resolve_seedid('FUR', '?', inv))
+        self.assertEqual(('GR', 'FUR', '', 'HHZ'),
                          _resolve_seedid('FUR', 'HHZ', inv, time=t_valid))
         self.assertEqual(
                 ('', 'FUR', '', 'HHZ'),
