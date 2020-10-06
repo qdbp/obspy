@@ -2,6 +2,11 @@ master
 ======
 
 Changes:
+ - Remove individual logging configurations in Obspy. Logging can be
+   configured by the user. See documentation of Pythons logging module.
+   Only the FDSN mass downloader automatically configures logging as before,
+   but this behavior can be turned off now. The loglevel keywords are therefore
+   deprecated and have no effect anymore. (see #2720)
  - obspy.core:
    * add option to suppress evalresp sensitivity mismatch warning when removing
      instrument response (see #2677)
@@ -41,6 +46,10 @@ Changes:
  - obspy.signal.spectral_estimation.PPSD:
    * Added special handling option for infrasound data and global infrasound noise
      models for plotting (see #2740)
+ - obspy.scripts
+   * obspy-runtests can take one or two -v flags for a more smooth verbosity
+     control (see #2720)
+   * fix broken "--raise-all-warnings" flag in obspy-runtests (see #2720)
 
 maintenance_1.2.x
 =================
