@@ -113,7 +113,6 @@ KEYWORDS = [
     'WaveServerV', 'WebDC', 'web service', 'WIN', 'Winston', 'XML-SEED',
     'XSEED']
 
-# when bumping to numpy 1.7.0: get rid of if/else when loading npz file to PPSD
 INSTALL_REQUIRES = [
     'numpy>=1.15.0',
     'scipy>=1.0.0',
