@@ -99,7 +99,6 @@ from argparse import ArgumentParser
 from urllib.parse import urlparse
 
 import numpy as np
-import requests
 
 import obspy
 from obspy.core.util import ALL_MODULES, DEFAULT_MODULES, NETWORK_MODULES
@@ -189,6 +188,7 @@ def _create_report(ttrs, timetaken, log, server, hostname, sorted_tests,
     If `server` is specified without URL scheme, 'https://' will be used as a
     default.
     """
+    import requests
     # import additional libraries here to speed up normal tests
     import urllib.parse
     import codecs
