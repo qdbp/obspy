@@ -3,6 +3,7 @@ master
 
 Changes:
  - obspy.core:
+   * speed up import of obspy core functions (see #2758)
    * add option to suppress evalresp sensitivity mismatch warning when removing
      instrument response (see #2677)
    * round magnitudes in Catalog/Event string representation to one decimal
