@@ -13,6 +13,8 @@ Changes:
    * introduce fine-grained FDSN client exceptions (see #2653)
  - obspy.clients.filesystem:
    * add get_waveforms_bulk() method to SDS client (see #2616, #2626)
+ - obspy.imaging:
+   * fix section plot in case of a single trace only (see #2764)
  - obspy.io.css:
    * open CSS waveforms even if gzip-compressed (see #2736)
  - obspy.io.hypodd
