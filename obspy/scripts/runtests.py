@@ -83,7 +83,6 @@ verbose output and report everything, you would run::
         $ obspy-runtests -r -v -x clients.seishub -x io.sh --all
 """
 import copy
-import doctest
 import glob
 import importlib
 import operator
@@ -519,6 +518,7 @@ def run_tests(verbosity=1, tests=None, report=False, log=None,
     :type server: str, optional
     :param server: Report server URL (default is ``"tests.obspy.org"``).
     """
+    import doctest
     if tests is None:
         tests = []
     print("Running {}, ObsPy version '{}'".format(__file__, obspy.__version__))
