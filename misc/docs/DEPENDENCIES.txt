@@ -1,5 +1,5 @@
 sphinx>=3.1.1
-m2r==dev  # due to https://github.com/miyakogi/m2r/issues/51
+m2r2>=0.2.7 # m2r is not maintained anymore, this fork is
 pybtex>=0.22.2
 sphinx_rtd_theme
 matplotlib

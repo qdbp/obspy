@@ -58,13 +58,17 @@ extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.todo',
     # theme
-    'm2r',
+    'm2r2',
     'sphinx_rtd_theme',
     # custom extensions
     'plot_directive',
     'credits',
     'citations',
+    # 'sphinxcontrib.bibtex',
 ]
+
+from pathlib import Path
+bibtex_bibfiles = list(Path('.').joinpath('source', 'bibliography').glob('*.bib'))
 
 # The file extensions of source files. Sphinx considers the files with this
 # suffix as sources. The value can be a dictionary mapping file extensions to
