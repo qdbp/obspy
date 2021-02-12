@@ -12,6 +12,8 @@ import obspy
 import os
 import sys
 
+import cartopy
+
 import matplotlib
 
 # Use matplotlib agg backend
