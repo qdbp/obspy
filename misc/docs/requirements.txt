@@ -3,6 +3,7 @@ m2r2>=0.2.7 # m2r is not maintained anymore, this fork is
 pybtex>=0.22.2
 sphinx_rtd_theme
 matplotlib
+numpy # required by cartopy
 obspy
 cartopy
 
