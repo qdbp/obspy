@@ -4,6 +4,7 @@ pybtex>=0.22.2
 sphinx_rtd_theme
 matplotlib
 obspy
+cartopy
 
 # deps used in tutorial but not working anymore
 # basemap
