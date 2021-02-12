@@ -11,3 +11,7 @@ jobs:
         with:
           pre-build-command: "apt-get update -yqq && apt-get install -yqq --no-install-recommends build-essential gcc"
           docs-folder: "misc/docs/"
+      - uses: actions/upload-artifact@v1
+        with:
+          name: DocumentationHTML
+          path: "misc/docs/_build/html/"
