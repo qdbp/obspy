@@ -8,15 +8,11 @@
 #
 
 import datetime
-import glob
 import obspy
 import os
 import sys
 
 import matplotlib
-
-import sphinx_rtd_theme
-
 
 # Use matplotlib agg backend
 matplotlib.use("agg")
@@ -67,8 +63,9 @@ extensions = [
     # 'sphinxcontrib.bibtex',
 ]
 
-from pathlib import Path
-bibtex_bibfiles = list(Path('.').joinpath('source', 'bibliography').glob('*.bib'))
+# Uncomment this if you want to use sphinxcontrib.bibtex
+# from pathlib import Path
+# bibtex_bibfiles = list(Path('.').joinpath('source', 'bibliography').glob('*.bib'))
 
 # The file extensions of source files. Sphinx considers the files with this
 # suffix as sources. The value can be a dictionary mapping file extensions to
@@ -219,9 +216,6 @@ autosummary_generate = True
 
 # If true, autosummary already overwrites stub files by generated contents.
 autosummary_generate_overwrite = False
-
-# Don't merge __init__ method in auoclass content
-autoclass_content = 'class'
 
 
 # -- Options for linkcheck exension ------------------------------------------
