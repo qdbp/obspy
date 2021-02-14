@@ -10,7 +10,7 @@ jobs:
       - uses: ammaraskar/sphinx-action@master
         with:
           pre-build-command: "apt-get update -yqq && apt-get install -yqq --no-install-recommends build-essential gcc \
-          libproj-dev proj-data proj-bin libgeos-dev"
+          libproj-dev proj-data proj-bin libgeos-dev && python -m pip install numpy"
           docs-folder: "misc/docs/"
       - uses: actions/upload-artifact@v2
         with:
