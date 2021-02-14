@@ -9,8 +9,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ammaraskar/sphinx-action@master
         with:
-          pre-build-command: "apt-get update -yqq && apt-get install -yqq --no-install-recommends build-essential gcc \
-          libproj-dev proj-data proj-bin libgeos-dev && python -m pip install numpy"
+          pre-build-command: "apt-get update -yqq && \
+          apt-get install -yqq build-essential gcc libproj-dev proj-data proj-bin libgeos-dev && \
+          python -m pip install numpy && \
+          python -m pip install shapely --no-binary shapely"
           docs-folder: "misc/docs/"
       - uses: actions/upload-artifact@v2
         with:
