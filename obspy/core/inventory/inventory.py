@@ -583,9 +583,9 @@ class Inventory(ComparingObject):
         :type channel: str
         :param channel: Potentially wildcarded channel code. If not given,
             all channel codes will be accepted.
-        :type time: :class:`~obspy.core.utcdatetime.UTCDateTime`
-        :param time: Only include networks/stations/channels active at given
-            point in time.
+        :type :samp:`time`: :class:`~obspy.core.utcdatetime.UTCDateTime`
+        :param :samp:`time`: Only include networks/stations/channels active at
+            given point in time.
         :type starttime: :class:`~obspy.core.utcdatetime.UTCDateTime`
         :param starttime: Only include networks/stations/channels active at or
             after given point in time (i.e. channels ending before given time
