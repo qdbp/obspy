@@ -1,4 +1,4 @@
-sphinx>=3.1.1
+sphinx==3.4.3 # due to sphinx-doc/sphinx#8880 in 3.5.0
 m2r2>=0.2.7 # m2r is not maintained anymore, this fork is
 pybtex>=0.22.2
 sphinx_rtd_theme
