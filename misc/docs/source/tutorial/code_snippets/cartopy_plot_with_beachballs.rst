@@ -13,7 +13,7 @@ builtin methods, see e.g.
 
 For full control over the projection and map extent, a custom map can be
 set up (e.g. following the examples in the
-`cartopy documentation <http://matplotlib.org/basemap/users/index.html>`_),
+`cartopy documentation <https://scitools.org.uk/cartopy/docs/latest/gallery/index.html>`_),
 and then be reused for plots of
 e.g. :class:`~obspy.core.inventory.inventory.Inventory` or
 :class:`~obspy.core.event.catalog.Catalog` objects:
@@ -64,14 +64,14 @@ our SRTM data file (from CGIAR_) look like this::
 .. _plotmap_shaded.py: https://github.com/matplotlib/basemap/blob/master/examples/plotmap_shaded.py?raw=true
 
 
-Basemap Plot of the Globe with Beachballs
+Cartopy Plot of the Globe with Beachballs
 =========================================
 
-.. plot:: tutorial/code_snippets/basemap_plot_with_beachballs2.py
+.. plot:: tutorial/code_snippets/cartopy_plot_with_beachballs2.py
    :include-source:
 
-Basemap Plot of the Globe with Beachball using read_events
+Cartopy Plot of the Globe with Beachball using read_events
 ==========================================================
 
-.. plot:: tutorial/code_snippets/basemap_with_beachball_read_events.py
+.. plot:: tutorial/code_snippets/cartopy_with_beachball_read_events.py
    :include-source:

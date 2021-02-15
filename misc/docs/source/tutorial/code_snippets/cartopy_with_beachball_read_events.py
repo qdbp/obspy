@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-import cartopy
+import cartopy.crs as ccrs
 
 from obspy import read_events
 from obspy.imaging.beachball import beach
@@ -14,9 +14,9 @@ tensor = focmec.moment_tensor.tensor
 moment_list = [tensor.m_rr, tensor.m_tt, tensor.m_pp,
                tensor.m_rt, tensor.m_rp, tensor.m_tp]
 
-projection = cartopy.crs.PlateCarree(central_longitude=0.0)
+projection = ccrs.PlateCarree(central_longitude=0.0)
 x, y = projection.transform_point(x=origin.longitude, y=origin.latitude,
-                                  src_crs=cartopy.crs.Geodetic())
+                                  src_crs=ccrs.Geodetic())
 
 fig = plt.figure(dpi=150)
 ax = fig.add_subplot(111, projection=projection)
