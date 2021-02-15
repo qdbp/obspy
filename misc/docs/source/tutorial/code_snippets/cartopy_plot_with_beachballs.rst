@@ -51,8 +51,7 @@ our SRTM data file (from CGIAR_) look like this::
       >>> x = geo.ReadAsArray()  # doctest: +SKIP
 
 * GeoTiff elevation data is available e.g. from ASTER_
-* Shading/Illumination can be added. See the basemap example plotmap_shaded.py_
-  for more info.
+* Shading/Illumination can be added.
 
 .. _cartopy:: https://scitools.org.uk/cartopy/docs/latest/
 .. _pypi: https://pypi.org/project/Cartopy/
@@ -61,7 +60,6 @@ our SRTM data file (from CGIAR_) look like this::
 .. _NumPy: https://www.numpy.org/
 .. _GDAL: https://trac.osgeo.org/gdal/wiki/GdalOgrInPython
 .. _ASTER: https://gdem.ersdac.jspacesystems.or.jp/search.jsp
-.. _plotmap_shaded.py: https://github.com/matplotlib/basemap/blob/master/examples/plotmap_shaded.py?raw=true
 
 
 Cartopy Plot of the Globe with Beachballs
