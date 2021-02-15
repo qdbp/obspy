@@ -17,4 +17,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: DocumentationHTML
-          path: build/html/
+          path: misc/docs/build/html/
