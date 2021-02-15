@@ -1,33 +1,30 @@
-from mpl_toolkits.basemap import Basemap
-import numpy as np
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
 import matplotlib.pyplot as plt
 
 from obspy import read_inventory, read_events
 
-# Set up a custom basemap, example is taken from basemap users' manual
-fig, ax = plt.subplots()
+# Set up a custom projection
+projection = ccrs.AlbersEqualArea(
+    central_longitude=35,
+    central_latitude=50,
+    standard_parallels=(40, 42)
+)
 
-# setup albers equal area conic basemap
-# lat_1 is first standard parallel.
-# lat_2 is second standard parallel.
-# lon_0, lat_0 is central point.
-m = Basemap(width=8000000, height=7000000,
-            resolution='c', projection='aea',
-            lat_1=40., lat_2=60, lon_0=35, lat_0=50, ax=ax)
-m.drawcoastlines()
-m.drawcountries()
-m.fillcontinents(color='wheat', lake_color='skyblue')
-# draw parallels and meridians.
-m.drawparallels(np.arange(-80., 81., 20.))
-m.drawmeridians(np.arange(-180., 181., 20.))
-m.drawmapboundary(fill_color='skyblue')
+# Set up a figure
+fig = plt.figure(dpi=150)
+ax = fig.add_subplot(111, projection=projection)
+ax.set_extent((-15., 75., 15., 80.))
+
+# Draw standard features
+ax.gridlines()
+ax.coastlines()
+ax.stock_img()
+ax.add_feature(cfeature.BORDERS)
+
 ax.set_title("Albers Equal Area Projection")
 
-# we need to attach the basemap object to the figure, so that obspy knows about
-# it and reuses it
-fig.bmap = m
-
-# now let's plot some data on the custom basemap:
+# Now, let's plot some data on the map
 inv = read_inventory()
 inv.plot(fig=fig, show=False)
 cat = read_events()
