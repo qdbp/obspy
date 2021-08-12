@@ -30,6 +30,12 @@ Changes:
  - obspy.io.hypodd
    * add PHA write support (see #2687)
    * add read support for horizontal and vertical origin uncertainty (see #2687)
+ - obspy.io.kinemetrics:
+   * adds the ``apply_calib`` argument to the ``read_evt`` method to allow
+     obtaining the raw data bits stored in the evt file (see #2582), note this
+     changes the default (wrong!) behaviour, by default the data returned will
+     be the NOT corrected ones. When passing ``apply_calib=True``, the
+     calibration factor will be used.
  - obspy.io.reftek:
    * enable reading data with floating point sampling rates like low sampling
      rate state-of-health channels (see #2678)
