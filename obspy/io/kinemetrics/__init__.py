@@ -21,7 +21,7 @@ Reading
 Similar to reading any other waveform data format using obspy.core:
 
     >>> from obspy import read
-    >>> st = read("/path/to/BI008_MEMA-04823.evt")
+    >>> st = read("/path/to/BI008_MEMA-04823.evt", apply_calib=True)
     >>> st  # doctest: +ELLIPSIS
     <obspy.core.stream.Stream object at 0x...>
     >>> print (st)  # doctest: +NORMALIZE_WHITESPACE
