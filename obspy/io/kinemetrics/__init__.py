@@ -53,7 +53,7 @@ a ``kinemetrics_evt`` dictionary with specific attributes.
        sampling_rate: 250.0
                delta: 0.004
                 npts: 5750
-               calib: 1.0
+               calib: 1.1694431304931641e-06
              _format: KINEMETRICS_EVT
     >>> for k, v in sorted(stats_evt.items()):
     ...     print(k, v)
