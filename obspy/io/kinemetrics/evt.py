@@ -109,7 +109,6 @@ class Evt(object):
                 'Setting "apply_calib=%s" and continuing...' % apply_calib,
                 ObsPyDeprecationWarning)
 
-
         # Support reading from filenames of file-like objects.
         if hasattr(filename_or_object, "seek") and \
                 hasattr(filename_or_object, "tell") and \
