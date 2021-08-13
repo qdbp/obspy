@@ -9,11 +9,13 @@ Evt (Kinemetrics) format support for ObsPy.
     (https://www.gnu.org/copyleft/lesser.html)
 """
 from struct import unpack
+import warnings
 
 import numpy as np
 
 from obspy import Stream, Trace
 from obspy.core.compatibility import from_buffer
+from obspy.core.util.deprecation_helpers import ObsPyDeprecationWarning
 from .evt_base import (EvtBadDataError, EvtBadHeaderError, EvtEOFError,
                        EvtVirtual)
 
@@ -96,6 +98,18 @@ class Evt(object):
         :rtype: obspy.core.stream.Stream
         :return: Obspy Stream with data
         """
+
+        # Need to deprecate "raw" until version 2.1
+        if "raw" in kwargs:
+            apply_calib = not kwargs["raw"]
+            warnings.warn(
+                'The "raw" keyword argument is deprecated, please use '
+                '"apply_calib" instead. Note the behaviour is flipped, so '
+                '"raw=True" becomes "apply_calib=False, which is default now. '
+                'Setting "apply_calib=%s" and continuing...' % apply_calib,
+                ObsPyDeprecationWarning)
+
+
         # Support reading from filenames of file-like objects.
         if hasattr(filename_or_object, "seek") and \
                 hasattr(filename_or_object, "tell") and \
@@ -148,7 +162,8 @@ class Evt(object):
             cur_trace.stats.sampling_rate = float(self.samplingrate)
             cur_trace.stats.starttime = self.e_header.starttime
             cur_trace.stats.kinemetrics_evt = self.e_header.make_obspy_dict(i)
-            cur_trace.stats.calib = 1./calibs[i]
+            if not apply_calib:
+                cur_trace.stats.calib = 1./calibs[i]
             traces.append(cur_trace)
 
         return Stream(traces=traces)
