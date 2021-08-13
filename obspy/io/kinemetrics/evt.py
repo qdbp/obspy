@@ -93,8 +93,8 @@ class Evt(object):
         :type filename_or_object: str or file-like object
         :param filename_or_object: Evt file to be read
         :type apply_calib: bool
-        :param apply_calib: False if raw data (no corrections, int32, default)
-                     True if data in m/s2.
+        :param apply_calib: If False, the raw data will be returned (no
+            corrections, int32, default), if True, the data will be in m/s2.
         :rtype: obspy.core.stream.Stream
         :return: Obspy Stream with data
         """
